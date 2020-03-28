@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Importing Vue -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>Practising</title>
+  </head>
+  <body>
+    <div id="main">
+      <p>Please enter your Full Name</p>
+      <span><input type="text" v-on:input="enterTitle"/></span>
+      <p>This is my Full Name: {{ name }}</p>
+    </div>
+
+    <script>
+      new Vue({
+        // selecting the part of the HTML we control
+        el: "#main",
+        // entering data we want to output
+        data: {
+          name: ""
+        },
+        methods: {
+          enterTitle: function(e) {
+            this.name = e.target.value;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
